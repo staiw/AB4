@@ -1,31 +1,20 @@
-package ex04;
-import ex04.PointerMother;
+package de.uniheidelberg.cl.java.ex04;
 
-public class PointerToken extends PointerMother {
+public class PointerToken extends Token {
     private String original;
     private int start;
     private int length;
 
-
-
-    public PointerToken(String original, int start, int length) {
-        this.original = original;
+    public PointerToken(int id, String surface, int start, int length, String lemma, String pos, int head, String rel) {
+        super(id, surface, lemma, pos, head, rel);
+        this.original = surface;
         this.start = start;
         this.length = length;
     }
-    public PointerToken(int id, String original, int start, int length, String lemma, String pos, int head, String rel) {
-        this.id = id;
-        this.original = original;
-        this.start = start;
-        this.length = length;
-        this.lemma = lemma;
-        this.pos = pos;
-        this.rel = rel;
-        this.head = head;
-    }
 
+    @Override
     public String getSurface() {
-        String surfaceToken = original.substring(start, start + length - 1);
+        String surfaceToken = original.substring(start, start + length);
         return surfaceToken;
     }
 

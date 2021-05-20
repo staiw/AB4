@@ -7,8 +7,6 @@ import java.util.Random;
 import ex04.TaggableMother;
 import ex04.TaggedMother;
 import ex04.DependencyMother;
-import ex04.PointerToken;
-import ex04.PointerMother;
 
 
 public class SentenceUtils {
@@ -152,15 +150,15 @@ public class SentenceUtils {
 		System.out.println(findLeafRelations(tokenSentence));
 
 		//Uncomment to test PointerToken
-		//String originalText = "This is  a test";
-		//List<Token> pointerTokens = new ArrayList<>();
-		//pointerTokens.add(new PointerToken(1, originalText, 0, 4, "This", "DT", 4, "nsubj"));
-		//pointerTokens.add(new PointerToken(2, originalText, 5, 2, "be", "DT", 4, "nsubj"));
-		//pointerTokens.add(new PointerToken(3, originalText, 9, 1, "a", "DT", 4, "nsubj"));
-		//pointerTokens.add(new PointerToken(4, originalText, 11, 4, "test", "DT", 4, "nsubj"));
+		String originalText = "This is  a test";
+		List<Token> pointerTokens = new ArrayList<>();
+		pointerTokens.add(new PointerToken(1, originalText, 0, 4, "This", "DT", 4, "nsubj"));
+		pointerTokens.add(new PointerToken(2, originalText, 5, 2, "be", "DT", 4, "nsubj"));
+		pointerTokens.add(new PointerToken(3, originalText, 9, 1, "a", "DT", 4, "nsubj"));
+		pointerTokens.add(new PointerToken(4, originalText, 11, 4, "test", "DT", 4, "nsubj"));
 
-		//TokenSentence tokenSentenceWithIndex = new TokenSentence(pointerTokens);
-		//printTags(tokenSentenceWithIndex);
+		TokenSentence tokenSentenceWithIndex = new TokenSentence(pointerTokens);
+		printTags(tokenSentenceWithIndex);
 
 
 		//Uncomment to test highlightTokens

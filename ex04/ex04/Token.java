@@ -1,10 +1,13 @@
 package de.uniheidelberg.cl.java.ex04;
 
-import ex04.PointerMother;
-
-public class Token extends PointerMother {
+public class Token {
 	private String surface;
-	
+	private String lemma;
+	private String pos;
+	private String rel;
+	private int id;
+	private int head;
+
 	public Token(int id, String surface, String lemma, String pos, int head, String rel) {
 		super();
 		this.id = id;
@@ -21,6 +24,46 @@ public class Token extends PointerMother {
 
 	public void setSurface(String surface) {
 		this.surface = surface;
+	}
+
+	public String getLemma() {
+		return lemma;
+	}
+
+	public void setLemma(String lemma) {
+		this.lemma = lemma;
+	}
+
+	public String getRel() {
+		return rel;
+	}
+
+	public void setRel(String rel) {
+		this.rel = rel;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getHead() {
+		return head;
+	}
+
+	public void setHead(int head) {
+		this.head = head;
+	}
+
+	public String getPos() {
+		return pos;
+	}
+
+	public void setPos(String pos) {
+		this.pos = pos;
 	}
 
 	@Override
@@ -41,10 +84,10 @@ public class Token extends PointerMother {
 			return true;
 		}
 		if (obj == null) {
-			return false;			
+			return false;
 		}
 		if (!(obj instanceof Token)) {
-			return false;			
+			return false;
 		}
 		Token other = (Token) obj;
 		return surface.equals(other.surface) && lemma.equals(other.lemma) && pos.equals(other.pos);
